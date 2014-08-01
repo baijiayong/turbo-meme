@@ -2,7 +2,7 @@
 
 echo "Run-test"
 
-java -classpath "target/classes;target/test-classes" com.baldurtech
+java -classpath "target/classes;target/test-classes" com.baldurtech.FizzBuzzTest
 
 echo "Run-test done."
 
