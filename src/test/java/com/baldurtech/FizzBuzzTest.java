@@ -6,25 +6,30 @@ public class FizzBuzzTest
     
     public static void main(String args[])
     {
-        FizzBuzz fizzBuzz = new FizzBuzz();
         String  actualResult = null;
-        actualResult = fizzBuzz.say(1);
+        
+        FizzBuzz fizzBuzz1 = new FizzBuzz();
+        actualResult = fizzBuzz1.say(1);
         if(false == assertEquals("1",actualResult))
         {
             testResult = false;
-            System.out.println("Expected 1 But " + fizzBuzz.say(1) );
+            System.out.println("Expected 1 But " + fizzBuzz1.say(1) );
         }
-        actualResult = fizzBuzz.say(2);
+        
+        FizzBuzz fizzBuzz2 = new FizzBuzz();
+        actualResult = fizzBuzz2.say(2);
         if(false == assertEquals("2",actualResult))
         {
             testResult = false;
-            System.out.println("Expected 2 But " + fizzBuzz.say(2) );
+            System.out.println("Expected 2 But " + fizzBuzz2.say(2) );
         }
-        actualResult = fizzBuzz.say(3);
+        
+        FizzBuzz fizzBuzz3 = new FizzBuzz();
+        actualResult = fizzBuzz3.say(3);
         if(false == assertEquals("Fizz",actualResult))
         {
             testResult = false;
-            System.out.println("Excepted Fizz But " + fizzBuzz.say(3));
+            System.out.println("Excepted Fizz But " + fizzBuzz3.say(3));
         }
         outputTestReport(testResult);
     }
