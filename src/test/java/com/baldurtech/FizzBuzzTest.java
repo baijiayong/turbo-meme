@@ -20,7 +20,8 @@ public class FizzBuzzTest
             testResult = false;
             System.out.println("Expected 2 But " + fizzBuzz.say(2) );
         }
-        if(false == assertEquals("3",actualResult))
+        actualResult = fizzBuzz.say(3);
+        if(false == assertEquals("Fizz",actualResult))
         {
             testResult = false;
             System.out.println("Excepted Fizz But " + fizzBuzz.say(3));
