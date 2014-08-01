@@ -20,6 +20,10 @@ public class FizzBuzzTest
             testResult = false;
             System.out.println("Expected 2 But " + fizzBuzz.say(2) );
         }
+        outputTestReport(testResult);
+    }
+    public static void outputTestReport(Boolean testResult)
+    {
         if(testResult)
         {
            System.out.println("Test Success!"); 
