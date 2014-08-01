@@ -7,13 +7,15 @@ public class FizzBuzzTest
     public static void main(String args[])
     {
         FizzBuzz fizzBuzz = new FizzBuzz();
-    
-        if( ! "1".equals(fizzBuzz.say(1)))
+        String  actualResult = null;
+        actualResult = fizzBuzz.say(1);
+        if( ! "1".equals(actualResult))
         {
             testResult = false;
             System.out.println("Expected 1 But " + fizzBuzz.say(1) );
         }
-        if( ! "2".equals(fizzBuzz.say(2)))
+        actualResult = fizzBuzz.say(2);
+        if( ! "2".equals(actualResult))
         {
             testResult = false;
             System.out.println("Expected 2 But " + fizzBuzz.say(2) );
