@@ -13,7 +13,7 @@ public class FizzBuzzTest
         if(false == assertEquals("1",actualResult))
         {
             testResult = false;
-            System.out.println("Expected 1 But " + fizzBuzz1.say(1) );
+            System.out.println("Expected 1 But " + actualResult );
         }
         
         FizzBuzz fizzBuzz2 = new FizzBuzz();
@@ -21,7 +21,7 @@ public class FizzBuzzTest
         if(false == assertEquals("2",actualResult))
         {
             testResult = false;
-            System.out.println("Expected 2 But " + fizzBuzz2.say(2) );
+            System.out.println("Expected 2 But " + actualResult);
         }
         
         FizzBuzz fizzBuzz3 = new FizzBuzz();
@@ -29,7 +29,7 @@ public class FizzBuzzTest
         if(false == assertEquals("Fizz",actualResult))
         {
             testResult = false;
-            System.out.println("Excepted Fizz But " + fizzBuzz3.say(3));
+            System.out.println("Excepted Fizz But " + actualResult);
         }
         outputTestReport(testResult);
     }
