@@ -9,13 +9,13 @@ public class FizzBuzzTest
         FizzBuzz fizzBuzz = new FizzBuzz();
         String  actualResult = null;
         actualResult = fizzBuzz.say(1);
-        if( ! "1".equals(actualResult))
+        if(false == assertEquals("1",actualResult))
         {
             testResult = false;
             System.out.println("Expected 1 But " + fizzBuzz.say(1) );
         }
         actualResult = fizzBuzz.say(2);
-        if( ! "2".equals(actualResult))
+        if(false == assertEquals("2",actualResult))
         {
             testResult = false;
             System.out.println("Expected 2 But " + fizzBuzz.say(2) );
@@ -27,5 +27,9 @@ public class FizzBuzzTest
         {
             System.out.println("Test Failed!");
         }
+    }
+    public static Boolean assertEquals(String expectedResult, String actualResult)
+    {
+        return expectedResult.equals(actualResult);
     }
 }
