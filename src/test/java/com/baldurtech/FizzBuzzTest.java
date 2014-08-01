@@ -2,10 +2,12 @@ package com.baldurtech;
 
 public class FizzBuzzTest
 {
+    static Boolean testResult = true;
+    
     public static void main(String args[])
     {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        Boolean testResult = true;
+    
         if( ! "1".equals(fizzBuzz.say(1)))
         {
             testResult = false;
