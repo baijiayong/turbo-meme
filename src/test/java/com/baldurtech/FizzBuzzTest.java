@@ -9,28 +9,14 @@ public class FizzBuzzTest
         String  actualResult = null;
         
         FizzBuzz fizzBuzz1 = new FizzBuzz();
-        actualResult = fizzBuzz1.say(1);
-        if(false == assertEquals("1",actualResult))
-        {
-            testResult = false;
-            System.out.println("Expected 1 But " + actualResult );
-        }
-        
+        assertEquals("1",fizzBuzz1.say(1));
+       
         FizzBuzz fizzBuzz2 = new FizzBuzz();
-        actualResult = fizzBuzz2.say(2);
-        if(false == assertEquals("2",actualResult))
-        {
-            testResult = false;
-            System.out.println("Expected 2 But " + actualResult);
-        }
-        
+        assertEquals("2",fizzBuzz2.say(2));
+       
         FizzBuzz fizzBuzz3 = new FizzBuzz();
-        actualResult = fizzBuzz3.say(3);
-        if(false == assertEquals("Fizz",actualResult))
-        {
-            testResult = false;
-            System.out.println("Excepted Fizz But " + actualResult);
-        }
+        assertEquals("Fizz",fizzBuzz3.say(3));
+        
         outputTestReport(testResult);
     }
     public static void outputTestReport(Boolean testResult)
@@ -43,8 +29,13 @@ public class FizzBuzzTest
             System.out.println("Test Failed!");
         }
     }
-    public static Boolean assertEquals(String expectedResult, String actualResult)
+    public static void assertEquals(String expectedResult, String actualResult)
     {
-        return expectedResult.equals(actualResult);
+        if(false == expectedResult.equals(actualResult))
+        {
+            testResult = false;
+            System.out.println("Expected " + expectedResult + " But " + actualResult );
+        }
+        
     }
 }
