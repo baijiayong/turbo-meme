@@ -1,14 +1,30 @@
 package com.baldurtech;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.lang.reflect.Method;
+
 public class FizzBuzzTest
 {
     static Boolean testResult = true;
     
-    public static void main(String args[])
+    public static void main(String args[]) throws Exception
     {   
-        new FizzBuzzTest().test_1_should_be_1();
-        new FizzBuzzTest().test_2_should_be_2();
-        new FizzBuzzTest().test_3_should_be_Fizz();
+        List<Method> testMethods = new ArrayList<Method>();
+        Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
+        for(Method method : methods) 
+        {
+            if(method.getName().startsWith("test"))
+            {
+                testMethods.add(method);
+            }
+        }
+        for(Method method : testMethods)
+        {
+            System.out.println("Testing: " + method.getName());
+            Object obj = FizzBuzzTest.class.newInstance(); 
+            method.invoke(obj,new Object[]{});
+        }
         
         outputTestReport(testResult);
     }
@@ -36,7 +52,6 @@ public class FizzBuzzTest
             System.out.println("Expected " + expectedResult + " But " + actualResult );
         } 
     }
-    
     public static void outputTestReport(Boolean testResult)
     {
         if(testResult)
