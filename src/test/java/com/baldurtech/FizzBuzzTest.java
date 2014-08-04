@@ -5,8 +5,11 @@ public class FizzBuzzTest
     static Boolean testResult = true;
     
     public static void main(String args[])
-    {
-        String  actualResult = null;
+    {   
+        test_1_should_be_1();
+        test_2_should_be_2();
+        test_3_should_be_Fizz();
+        
         outputTestReport(testResult);
     }
     public static void test_1_should_be_1()
@@ -26,6 +29,16 @@ public class FizzBuzzTest
         FizzBuzz fizzBuzz3 = new FizzBuzz();
         assertEquals("Fizz",fizzBuzz3.say(3));
     }
+    
+    public static void assertEquals(String expectedResult, String actualResult)
+    {
+        if(false == expectedResult.equals(actualResult))
+        {
+            testResult = false;
+            System.out.println("Expected " + expectedResult + " But " + actualResult );
+        } 
+    }
+    
     public static void outputTestReport(Boolean testResult)
     {
         if(testResult)
@@ -35,13 +48,5 @@ public class FizzBuzzTest
         {
             System.out.println("Test Failed!");
         }
-    }
-    public static void assertEquals(String expectedResult, String actualResult)
-    {
-        if(false == expectedResult.equals(actualResult))
-        {
-            testResult = false;
-            System.out.println("Expected " + expectedResult + " But " + actualResult );
-        } 
     }
 }
