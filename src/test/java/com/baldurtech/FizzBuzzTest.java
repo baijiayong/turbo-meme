@@ -6,28 +6,26 @@ public class FizzBuzzTest
     
     public static void main(String args[])
     {   
-        test_1_should_be_1();
-        test_2_should_be_2();
-        test_3_should_be_Fizz();
+        new FizzBuzzTest().test_1_should_be_1();
+        new FizzBuzzTest().test_2_should_be_2();
+        new FizzBuzzTest().test_3_should_be_Fizz();
         
         outputTestReport(testResult);
     }
-    public static void test_1_should_be_1()
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    public void test_1_should_be_1()
     {
-        FizzBuzz fizzBuzz1 = new FizzBuzz();
-        assertEquals("1",fizzBuzz1.say(1));
+        assertEquals("1",fizzBuzz.say(1));
     }
        
-    public static void test_2_should_be_2()
+    public void test_2_should_be_2()
     {
-        FizzBuzz fizzBuzz2 = new FizzBuzz();
-        assertEquals("2",fizzBuzz2.say(2));
+        assertEquals("2",fizzBuzz.say(2));
     }
          
-    public static void test_3_should_be_Fizz()
+    public void test_3_should_be_Fizz()
     {
-        FizzBuzz fizzBuzz3 = new FizzBuzz();
-        assertEquals("Fizz",fizzBuzz3.say(3));
+        assertEquals("Fizz",fizzBuzz.say(3));
     }
     
     public static void assertEquals(String expectedResult, String actualResult)
