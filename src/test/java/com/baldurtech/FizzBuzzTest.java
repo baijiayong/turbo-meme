@@ -7,10 +7,20 @@ import java.lang.reflect.Method;
 public class FizzBuzzTest
 {
     static Boolean testResult = true;
+    static List<Method> testMethods = new ArrayList<Method>();
     
     public static void main(String args[]) throws Exception
-    {   
-        List<Method> testMethods = new ArrayList<Method>();
+    {           
+        for(Method method : getAllTestMethods())
+        {
+            System.out.println("Testing: " + method.getName());
+            Object obj = FizzBuzzTest.class.newInstance(); 
+            method.invoke(obj,new Object[]{});
+        }
+        outputTestReport(testResult);
+    }
+    public static List<Method> getAllTestMethods()
+    {
         Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
         for(Method method : methods) 
         {
@@ -19,14 +29,7 @@ public class FizzBuzzTest
                 testMethods.add(method);
             }
         }
-        for(Method method : testMethods)
-        {
-            System.out.println("Testing: " + method.getName());
-            Object obj = FizzBuzzTest.class.newInstance(); 
-            method.invoke(obj,new Object[]{});
-        }
-        
-        outputTestReport(testResult);
+        return testMethods;
     }
     FizzBuzz fizzBuzz = new FizzBuzz();
     public void test_1_should_be_1()
