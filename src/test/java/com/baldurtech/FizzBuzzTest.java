@@ -11,7 +11,7 @@ public class FizzBuzzTest
     
     public static void main(String args[]) throws Exception
     {           
-        for(Method method : getAllTestMethods())
+        for(Method method : getAllTestMethods(FizzBuzzTest.class))
         {
             System.out.println("Testing: " + method.getName());
             Object obj = FizzBuzzTest.class.newInstance(); 
@@ -19,9 +19,9 @@ public class FizzBuzzTest
         }
         outputTestReport(testResult);
     }
-    public static List<Method> getAllTestMethods()
+    public static List<Method> getAllTestMethods(Class clazz)
     {
-        Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
+        Method[] methods = clazz.getDeclaredMethods();
         for(Method method : methods) 
         {
             if(method.getName().startsWith("test"))
