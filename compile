@@ -1,4 +1,4 @@
-#!/bin/sh
+#/bin/sh
 
 set -e
 
@@ -8,5 +8,6 @@ mkdir -p target/classes target/test-classes
 
 javac -encoding "UTF-8" -d target/classes -classpath "target/classes;target/test-classes/" src/main/java/com/baldurtech/*.java
 javac -encoding "UTF-8" -d target/test-classes -classpath "target/classes;target/test-classes/" src/test/java/com/baldurtech/*.java
+
 
 echo "Compile done."
